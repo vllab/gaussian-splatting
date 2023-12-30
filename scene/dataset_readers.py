@@ -111,7 +111,6 @@ def fetchPly(path):
     try:
         colors = np.vstack([vertices['red'], vertices['green'], vertices['blue']]).T / 255.0
     except ValueError:
-        warn(f'No color information in {path!r}, generating random colors.')
         shs = np.random.random((len(vertices), 3)) / 255.0
         colors = SH2RGB(shs)
     try:
